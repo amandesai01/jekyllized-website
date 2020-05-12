@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ post.title }}</title>
+    {% include css.html %} {% include meta.html %}
+  </head>
+  <body>
+    {% include sidebar.html %} {% include loader.html %}
+    <div id="content" class="site-content center-relative">
+        <div class="single-post-wrapper content-1070 center-relative">
+            <article class="center-relative">
+                <h1 class="entry-title">
+                    {{ page.title }}
+                </h1>
+                <div class="post-info content-660 center-relative">
+                    <div class="cat-links">
+                        <ul>
+                            <li><a href="#">{{ page.tag }}</a></li>
+                        </ul>
+                    </div>
+                    <div class="entry-date published">{{ page.date | date: "%-d %B %Y" }}</div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="entry-content">
+                    <div class="post-full-width">
+                        <div class="image-slider-wrapper">
+                            <div class="caroufredsel_wrapper">
+                                <ul id="slider1" class="image-slider slides center-text">
+                                    <li><img src="{{ page.featureimage }}" alt=""></li>
+                                </ul>
+                            </div>
+                            <div class="slider1_pagination carousel_pagination left"></div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="clear"></div>
+                        <div class="content-wrap content-660 center-relative ">
+                            {{ content }}
+                        </div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </article>
+        </div>
+    </div>
+    {% include scripts.html %}
+  </body>
+</html>
